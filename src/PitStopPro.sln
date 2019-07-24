@@ -29,6 +29,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiAuthority.AccessTokenV
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthRequiredDemo.GraphQL", "AuthRequiredDemo.GraphQL\AuthRequiredDemo.GraphQL.csproj", "{7071F059-64A7-40FD-B4D9-6C4D55212710}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6BB94A19-F5D7-4CEF-88A3-9E8610CB564A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestServerFixture", "TestServerFixture\TestServerFixture.csproj", "{78CE295B-E3C4-434F-84D2-2754097CAB4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,10 @@ Global
 		{7071F059-64A7-40FD-B4D9-6C4D55212710}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7071F059-64A7-40FD-B4D9-6C4D55212710}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7071F059-64A7-40FD-B4D9-6C4D55212710}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CE295B-E3C4-434F-84D2-2754097CAB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CE295B-E3C4-434F-84D2-2754097CAB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CE295B-E3C4-434F-84D2-2754097CAB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CE295B-E3C4-434F-84D2-2754097CAB4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{75726072-1EF4-4413-83AD-05DB828404FA} = {86AAF0EA-94B9-45EC-A2DF-3A6F2BBA3BD5}
 		{2C903D61-0FD8-46C8-BE28-0E0CBE765A40} = {86AAF0EA-94B9-45EC-A2DF-3A6F2BBA3BD5}
 		{7071F059-64A7-40FD-B4D9-6C4D55212710} = {2033E8C6-EE24-4D8C-BC01-D5CCF17D34C9}
+		{78CE295B-E3C4-434F-84D2-2754097CAB4C} = {6BB94A19-F5D7-4CEF-88A3-9E8610CB564A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40CA8DF3-11D5-48E1-9D3D-DE4FF71A97B4}
