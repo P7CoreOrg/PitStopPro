@@ -4,7 +4,7 @@ using System;
 
 namespace SimpleDocumentStore
 {
-    public class SimpleDocument<T> : DocumentBaseWithTenant, ISimpleDocumentBase<T> where T : IComparable
+    public class SimpleDocument<T> : DocumentBase, ISimpleDocumentBase<T> where T : IComparable
     {
         public SimpleDocument() { }
 
