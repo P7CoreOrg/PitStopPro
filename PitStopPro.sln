@@ -3,43 +3,50 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerManagementAPI", "CustomerManagementAPI\CustomerManagementAPI.csproj", "{D566D36D-8635-429B-9E22-6AB1509CB8CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerManagementAPI", "src\CustomerManagementAPI\CustomerManagementAPI.csproj", "{D566D36D-8635-429B-9E22-6AB1509CB8CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P7Core.GraphQLCore", "P7Core.GraphQLCore\P7Core.GraphQLCore.csproj", "{88166FA9-E5D6-46E0-9680-A660A95226AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P7Core.GraphQLCore", "src\P7Core.GraphQLCore\P7Core.GraphQLCore.csproj", "{88166FA9-E5D6-46E0-9680-A660A95226AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P7Core.GraphQLCore.Controllers", "P7Core.GraphQLCore.Controllers\P7Core.GraphQLCore.Controllers.csproj", "{AA554467-6673-4EDA-8066-179E5B25CEB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P7Core.GraphQLCore.Controllers", "src\P7Core.GraphQLCore.Controllers\P7Core.GraphQLCore.Controllers.csproj", "{AA554467-6673-4EDA-8066-179E5B25CEB7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLPlay.Contracts", "GraphQLPlay.Contracts\GraphQLPlay.Contracts.csproj", "{D483DD84-7E44-436D-B847-B42BFEFCC95C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLPlay.Contracts", "src\GraphQLPlay.Contracts\GraphQLPlay.Contracts.csproj", "{D483DD84-7E44-436D-B847-B42BFEFCC95C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLPlay.IdentityModelExtras", "GraphQLPlay.IdentityModelExtras\GraphQLPlay.IdentityModelExtras.csproj", "{9217921D-B313-4B5F-8B26-EB4CF5A53A42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLPlay.IdentityModelExtras", "src\GraphQLPlay.IdentityModelExtras\GraphQLPlay.IdentityModelExtras.csproj", "{9217921D-B313-4B5F-8B26-EB4CF5A53A42}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apis", "apis", "{2033E8C6-EE24-4D8C-BC01-D5CCF17D34C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hosts", "hosts", "{336D3FC0-1BF9-45D1-9DA2-09CAEE08FDC2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerManagementAPI.Host", "CustomerManagementAPI.Host\CustomerManagementAPI.Host.csproj", "{E2F6AC24-339D-48A5-9C8B-C8E3A58AC27E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerManagementAPI.Host", "src\CustomerManagementAPI.Host\CustomerManagementAPI.Host.csproj", "{E2F6AC24-339D-48A5-9C8B-C8E3A58AC27E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLPlay.Rollup.Shadow", "GraphQLPlay.Rollup.Shadow\GraphQLPlay.Rollup.Shadow.csproj", "{83BBAF51-4097-4F7D-A572-EFC92D3239B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLPlay.Rollup.Shadow", "src\GraphQLPlay.Rollup.Shadow\GraphQLPlay.Rollup.Shadow.csproj", "{83BBAF51-4097-4F7D-A572-EFC92D3239B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{75726072-1EF4-4413-83AD-05DB828404FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "src\Utils\Utils.csproj", "{75726072-1EF4-4413-83AD-05DB828404FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GraphQL.CORE", "GraphQL.CORE", "{86AAF0EA-94B9-45EC-A2DF-3A6F2BBA3BD5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiAuthority.AccessTokenValidation", "MultiAuthority.AccessTokenValidation\MultiAuthority.AccessTokenValidation.csproj", "{2C903D61-0FD8-46C8-BE28-0E0CBE765A40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiAuthority.AccessTokenValidation", "src\MultiAuthority.AccessTokenValidation\MultiAuthority.AccessTokenValidation.csproj", "{2C903D61-0FD8-46C8-BE28-0E0CBE765A40}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthRequiredDemo.GraphQL", "AuthRequiredDemo.GraphQL\AuthRequiredDemo.GraphQL.csproj", "{7071F059-64A7-40FD-B4D9-6C4D55212710}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthRequiredDemo.GraphQL", "src\AuthRequiredDemo.GraphQL\AuthRequiredDemo.GraphQL.csproj", "{7071F059-64A7-40FD-B4D9-6C4D55212710}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6BB94A19-F5D7-4CEF-88A3-9E8610CB564A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestServerFixture", "TestServerFixture\TestServerFixture.csproj", "{78CE295B-E3C4-434F-84D2-2754097CAB4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestServerFixture", "test\TestServerFixture\TestServerFixture.csproj", "{78CE295B-E3C4-434F-84D2-2754097CAB4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLHost.Core", "GraphQLHost.Core\GraphQLHost.Core.csproj", "{1F4DFF12-10E3-4397-B686-EF383236BEC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLHost.Core", "src\GraphQLHost.Core\GraphQLHost.Core.csproj", "{1F4DFF12-10E3-4397-B686-EF383236BEC8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerManagementStore", "CustomerManagementStore\CustomerManagementStore.csproj", "{DE4BBD5C-B068-40A0-8D20-421B71DB55DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerManagementStore", "src\CustomerManagementStore\CustomerManagementStore.csproj", "{DE4BBD5C-B068-40A0-8D20-421B71DB55DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDocumentStore", "SimpleDocumentStore\SimpleDocumentStore.csproj", "{BE1EB26C-1FB9-459B-A93D-1488F779F9C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDocumentStore", "src\SimpleDocumentStore\SimpleDocumentStore.csproj", "{BE1EB26C-1FB9-459B-A93D-1488F779F9C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest_CustomerManagementStore", "XUnitTest_CustomerManagementStore\XUnitTest_CustomerManagementStore.csproj", "{12FFE46B-2F14-4806-A16C-5570A581D95E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest_CustomerManagementStore", "test\XUnitTest_CustomerManagementStore\XUnitTest_CustomerManagementStore.csproj", "{12FFE46B-2F14-4806-A16C-5570A581D95E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{6F21C22F-C1DB-4027-97A1-0CEFD7AF9CF9}"
+	ProjectSection(SolutionItems) = preProject
+		build.ps1 = build.ps1
+		Dockerfile = Dockerfile
+		nuget.config = nuget.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

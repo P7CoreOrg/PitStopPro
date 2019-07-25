@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomerManagementStore\CustomerManagementStore.csproj" />
+    <ProjectReference Include="..\..\src\CustomerManagementStore\CustomerManagementStore.csproj" />
   </ItemGroup>
 
 </Project>
