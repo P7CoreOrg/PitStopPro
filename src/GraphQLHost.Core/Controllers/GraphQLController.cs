@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using P7Core.GraphQLCore.Controllers;
 using P7Core.GraphQLCore.Validators;
 
-namespace CustomerManagementAPI.Host.Controllers
+namespace GraphQLHost.Core.Controllers
 {
     [Route("api/v1/[controller]")]
     public class GraphQLController : GraphQLControllerBase<GraphQLController>

@@ -11,5 +11,10 @@ namespace GraphQLPlay.IdentityModelExtras.Extensions
             services.AddSingleton<IOAuth2ConfigurationStore, InMemoryOAuth2ConfigurationStore>();
             return services;
         }
+        public static IServiceCollection AddDefaultHttpClientFactory(this IServiceCollection services)
+        {
+            services.TryAddTransient<IDefaultHttpClientFactory, DefaultHttpClientFactory>();
+            return services;
+        }
     }
 }

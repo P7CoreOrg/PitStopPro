@@ -1,7 +1,6 @@
-using System.Net.Http;
-using GraphQLPlay.IdentityModelExtras;
+﻿using System.Net.Http;
 
-namespace CustomerManagementAPI.Host
+namespace GraphQLPlay.IdentityModelExtras
 {
     public class DefaultHttpClientFactory : IDefaultHttpClientFactory
     {
