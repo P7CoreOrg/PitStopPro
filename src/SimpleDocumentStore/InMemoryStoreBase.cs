@@ -26,14 +26,14 @@ namespace SimpleDocumentStore
                 return _containsAnyInList;
             }
         }
-        Dictionary<Guid,T> _collection;
-        Dictionary<Guid, T> Collection
+        Dictionary<string,T> _collection;
+        Dictionary<string, T> Collection
         {
             get
             {
                 if (_collection == null)
                 {
-                    _collection = new Dictionary<Guid, T>();
+                    _collection = new Dictionary<string, T>();
                 }
                 return _collection;
             }
@@ -65,12 +65,12 @@ namespace SimpleDocumentStore
             {
                 lock (TheLock)
                 {
-                    Collection[doc.Id_G] = doc;
+                    Collection[doc.Id] = doc;
                 }
             });
         }
 
-        public async Task<T> FetchAsync(Guid id)
+        public async Task<T> FetchAsync(string id)
         {
             var result = await GoAsync(() =>
             {
@@ -90,7 +90,7 @@ namespace SimpleDocumentStore
             await InsertAsync(doc);
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(string id)
         {
             await GoAsync(() =>
             {
@@ -124,8 +124,7 @@ namespace SimpleDocumentStore
       
         public async Task<IPage<T>> PageAsync(
             int pageSize,
-            byte[] pagingState,
-            Guid? tenantId = null)
+            byte[] pagingState)
         {
             byte[] currentPagingState = pagingState;
             PagingState ps = pagingState.DeserializePageState();
@@ -143,7 +142,7 @@ namespace SimpleDocumentStore
                 pagingState = ps.Serialize();
             }
 
-            var page = new PageProxy<T>(currentPagingState, pagingState, slice);
+            var page = new PageContainer<T>(currentPagingState, pagingState, slice);
             return page;
         }
 

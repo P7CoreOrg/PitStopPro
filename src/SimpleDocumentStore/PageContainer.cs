@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace SimpleDocumentStore
 {
-    public class PageProxy<T> : IPage<T>
+    public class PageContainer<T> : IPage<T>
     {
         public List<T> RawData { get; set; }
 
 
-        public PageProxy(byte[] currentPagingState, byte[] pagingState, List<T> rawData)
+        public PageContainer(byte[] currentPagingState, byte[] pagingState, List<T> rawData)
         {
             CurrentPagingState = currentPagingState;
             PagingState = pagingState;

@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using SimpleDocumentStore;
 
 namespace CustomerManagementStore.Model
 {
-    public class Customer : IComparable
+    public class Customer : DocumentBase,IComparable
     {
-        public string CustomerId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string PostalCode { get; set; }
@@ -26,10 +26,11 @@ namespace CustomerManagementStore.Model
             {
                 return false;
             }
-            if (!CustomerId.IsEqual(other.CustomerId))
+            if(!base.Equals(obj))
             {
                 return false;
             }
+
             if (!Name.IsEqual(other.Name))
             {
                 return false;

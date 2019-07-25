@@ -7,5 +7,7 @@ namespace CustomerManagementStore.Serivices
     public interface ICustomerManagmentStore
     {
         Task<Customer> GetCustomerAsync(string id);
+        Task UpsertCustomerAsync(Customer customer);
+        Task RemoveCustomerAsync(string id);
     }
 }

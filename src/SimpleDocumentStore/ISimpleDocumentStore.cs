@@ -26,35 +26,25 @@ namespace SimpleDocumentStore
         /// </summary>
         /// <param name="id"></param>        
         /// <returns></returns>
-        Task DeleteAsync(Guid id);
+        Task DeleteAsync(string id);
 
         /// <summary>
         /// Finds the SimpleDocument
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<SimpleDocument<T>> FetchAsync(Guid id);
+        Task<SimpleDocument<T>> FetchAsync(string id);
 
         /// <summary>
         /// Pages all SimpleDocuments
         /// </summary>
         /// <param name="pageSize"></param>
         /// <param name="pagingState"></param>
-        /// <param name="metaData"></param>
         /// <returns></returns>
         Task<IPage<SimpleDocument<T>>> PageAsync(int pageSize,
-            byte[] pagingState,
-            MetaData metaData = null);
+            byte[] pagingState);
 
-        /// <summary>
-        /// Pages all SimpleDocuments
-        /// </summary>
-        /// <param name="pageSize"></param>
-        /// <param name="pagingState"></param>
-        /// <param name="metaData"></param>
-        /// <returns></returns>
-        Task<ICollection<SimpleDocument<T>>> PageAsync(int pageSize,
-            int page,
-            MetaData metaData = null);
+
+       
     }
 }

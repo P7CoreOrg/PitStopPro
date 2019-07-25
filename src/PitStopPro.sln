@@ -33,11 +33,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6BB94A19
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestServerFixture", "TestServerFixture\TestServerFixture.csproj", "{78CE295B-E3C4-434F-84D2-2754097CAB4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQLHost.Core", "GraphQLHost.Core\GraphQLHost.Core.csproj", "{1F4DFF12-10E3-4397-B686-EF383236BEC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLHost.Core", "GraphQLHost.Core\GraphQLHost.Core.csproj", "{1F4DFF12-10E3-4397-B686-EF383236BEC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagementStore", "CustomerManagementStore\CustomerManagementStore.csproj", "{DE4BBD5C-B068-40A0-8D20-421B71DB55DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerManagementStore", "CustomerManagementStore\CustomerManagementStore.csproj", "{DE4BBD5C-B068-40A0-8D20-421B71DB55DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDocumentStore", "SimpleDocumentStore\SimpleDocumentStore.csproj", "{BE1EB26C-1FB9-459B-A93D-1488F779F9C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDocumentStore", "SimpleDocumentStore\SimpleDocumentStore.csproj", "{BE1EB26C-1FB9-459B-A93D-1488F779F9C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest_CustomerManagementStore", "XUnitTest_CustomerManagementStore\XUnitTest_CustomerManagementStore.csproj", "{12FFE46B-2F14-4806-A16C-5570A581D95E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,10 @@ Global
 		{BE1EB26C-1FB9-459B-A93D-1488F779F9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE1EB26C-1FB9-459B-A93D-1488F779F9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE1EB26C-1FB9-459B-A93D-1488F779F9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FFE46B-2F14-4806-A16C-5570A581D95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FFE46B-2F14-4806-A16C-5570A581D95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FFE46B-2F14-4806-A16C-5570A581D95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FFE46B-2F14-4806-A16C-5570A581D95E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +126,7 @@ Global
 		{1F4DFF12-10E3-4397-B686-EF383236BEC8} = {86AAF0EA-94B9-45EC-A2DF-3A6F2BBA3BD5}
 		{DE4BBD5C-B068-40A0-8D20-421B71DB55DF} = {2033E8C6-EE24-4D8C-BC01-D5CCF17D34C9}
 		{BE1EB26C-1FB9-459B-A93D-1488F779F9C2} = {2033E8C6-EE24-4D8C-BC01-D5CCF17D34C9}
+		{12FFE46B-2F14-4806-A16C-5570A581D95E} = {6BB94A19-F5D7-4CEF-88A3-9E8610CB564A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40CA8DF3-11D5-48E1-9D3D-DE4FF71A97B4}

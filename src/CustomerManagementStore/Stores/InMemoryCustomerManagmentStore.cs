@@ -6,12 +6,26 @@ using System.Threading.Tasks;
 
 namespace CustomerManagementStore.Stores
 {
-    public class InMemoryCustomerManagmentStore : 
-        SimpleDocument<Customer>,ICustomerManagmentStore
+    public class InMemoryCustomerManagmentStore : InMemorySimpleDocumentStore<Customer>,ICustomerManagmentStore
     {
-        public Task<Customer> GetCustomerAsync(string id)
+        public async Task<Customer> GetCustomerAsync(string id)
         {
-            throw new NotImplementedException();
+            var result = await base.FetchAsync(id);
+            return result?.Document;
+        }
+        public async Task UpsertCustomerAsync(Customer customer)
+        {
+            await base.InsertAsync(new SimpleDocument<Customer>(new MetaData()
+            {
+                Category = "Category 1", Version = "1.0.0"
+            }, customer)
+            {
+                Id = customer.Id
+            });
+        }
+        public async Task RemoveCustomerAsync(string id)
+        {
+            await base.DeleteAsync(id);
         }
     }
 }
