@@ -57,11 +57,11 @@ Log "Run test container with test runner image"
 
 if ($DockerOS -eq "linux") {
     Log "Environment: Linux containers"
-    docker run --rm -v ${TestResultsDir}:/app/tests/${TestResults} $TestImageName        
+    docker run --rm -v ${TestResultsDir}:/app/test/${TestResults} $TestImageName        
 }
 else {
     Log "Environment: Windows containers"
-    docker run --rm -v ${TestResultsDir}:C:\app\tests\${TestResults} $TestImageName
+    docker run --rm -v ${TestResultsDir}:C:\app\test\${TestResults} $TestImageName
 }
 
 PrintElapsedTime
