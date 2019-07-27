@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public class GraphQLUserContext
     {

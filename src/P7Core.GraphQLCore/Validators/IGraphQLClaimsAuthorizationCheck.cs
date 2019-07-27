@@ -1,10 +1,10 @@
 ﻿using System.Security.Claims;
 using GraphQL.Language.AST;
 
-namespace P7Core.GraphQLCore.Validators
+namespace GQL.GraphQLCore.Validators
 {
     public interface IGraphQLClaimsAuthorizationCheck
     {
-        bool ShouldDoAuthorizationCheck(ClaimsPrincipal claimsPrincipal,OperationType operationTye, string fieldName);
+        bool ShouldDoAuthorizationCheck(ClaimsPrincipal claimsPrincipal, OperationType operationTye, string fieldName);
     }
 }

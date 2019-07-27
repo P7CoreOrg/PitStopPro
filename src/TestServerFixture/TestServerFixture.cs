@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Net.Http;
-using GraphQLPlay.IdentityModelExtras;
+using GQL.IdentityModelExtras;
 using Microsoft.AspNetCore.Hosting;
 
 using Microsoft.AspNetCore.TestHost;

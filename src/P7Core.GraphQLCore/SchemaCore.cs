@@ -2,16 +2,16 @@ using System;
 using GraphQL;
 using GraphQL.Types;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public class SchemaCore : Schema
     {
         public SchemaCore(QueryCore query,
             MutationCore mutation,
-            SubscriptionCore subscription, 
+            SubscriptionCore subscription,
             IDependencyResolver resolver)
         {
-            
+
             if (query.RegistrationCount > 0)
             {
                 Query = query;
@@ -24,7 +24,7 @@ namespace P7Core.GraphQLCore
             {
                 Subscription = subscription;
             }
-            
+
             DependencyResolver = resolver;
         }
     }

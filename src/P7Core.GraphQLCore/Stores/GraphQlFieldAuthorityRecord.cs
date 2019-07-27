@@ -4,7 +4,7 @@ using System.Text;
 using GraphQL.Language.AST;
 using Newtonsoft.Json;
 
-namespace P7Core.GraphQLCore.Stores
+namespace GQL.GraphQLCore.Stores
 {
     public partial class ClaimConfigHandle
     {

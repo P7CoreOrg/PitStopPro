@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using IdentityModel.Client;
 using Microsoft.Extensions.Configuration;
 
-namespace GraphQLPlay.IdentityModelExtras
+namespace GQL.IdentityModelExtras
 {
 
     public class DiscoverCacheContainer : IDiscoveryCacheContainer
@@ -12,23 +12,23 @@ namespace GraphQLPlay.IdentityModelExtras
         private readonly IDefaultHttpClientFactory _defaultHttpClientFactory;
         private WellknownAuthority _wellknownAuthority;
         private DiscoveryCache _discoveryCache { get; set; }
- 
-        
 
-        public DiscoverCacheContainer(IDefaultHttpClientFactory defaultHttpClientFactory, 
+
+
+        public DiscoverCacheContainer(IDefaultHttpClientFactory defaultHttpClientFactory,
             WellknownAuthority wellknownAuthority)
         {
             _defaultHttpClientFactory = defaultHttpClientFactory;
             _wellknownAuthority = wellknownAuthority;
         }
 
-        public  DiscoveryCache DiscoveryCache
+        public DiscoveryCache DiscoveryCache
         {
             get
             {
                 if (_discoveryCache == null)
                 {
-                     
+
 
                     DiscoveryPolicy discoveryPolicy = new DiscoveryPolicy()
                     {
@@ -43,7 +43,7 @@ namespace GraphQLPlay.IdentityModelExtras
                         }
                     }
                     _discoveryCache = new DiscoveryCache(
-                        _wellknownAuthority.Authority, 
+                        _wellknownAuthority.Authority,
                         _defaultHttpClientFactory.HttpClient,
                         discoveryPolicy);
                 }
@@ -54,7 +54,7 @@ namespace GraphQLPlay.IdentityModelExtras
 
     public class DiscoverCacheContainerFactory
     {
-       
+
         private IDefaultHttpClientFactory _defaultHttpClientFactory;
         private IOAuth2ConfigurationStore _oAuth2ConfigurationStore;
         private Dictionary<string, DiscoverCacheContainer> _oIDCDiscoverCacheContainers;

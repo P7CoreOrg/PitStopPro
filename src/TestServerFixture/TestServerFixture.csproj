@@ -10,6 +10,6 @@
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.6" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\GraphQLPlay.IdentityModelExtras\GraphQLPlay.IdentityModelExtras.csproj" />
+    <ProjectReference Include="..\GraphQLPlay.IdentityModelExtras\GQL.IdentityModelExtras.csproj" />
   </ItemGroup>
 </Project>

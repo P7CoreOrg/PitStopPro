@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GraphQL.Http;
 using P7Core.Writers;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public class GraphQLDocumentWriter : JsonDocumentWriter, IDocumentWriter
     {
@@ -27,7 +27,7 @@ namespace P7Core.GraphQLCore
 
         public string Write(object value)
         {
-            return base.SerializeObject(value);
+            return SerializeObject(value);
         }
     }
 }

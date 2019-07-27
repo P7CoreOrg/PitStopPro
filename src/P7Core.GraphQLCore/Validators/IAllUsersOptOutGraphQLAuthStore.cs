@@ -1,4 +1,4 @@
-﻿namespace P7Core.GraphQLCore.Validators
+﻿namespace GQL.GraphQLCore.Validators
 {
     public interface IAllUsersOptOutGraphQLAuthStore : IGraphQLAuthStore
     {

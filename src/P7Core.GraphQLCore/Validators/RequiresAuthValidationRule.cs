@@ -5,14 +5,14 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
+using GQL.GraphQLCore;
+using GQL.GraphQLCore.Stores;
 using GraphQL;
 using GraphQL.Language.AST;
 using GraphQL.Types;
 using GraphQL.Validation;
 
-using P7Core.GraphQLCore.Stores;
-
-namespace P7Core.GraphQLCore.Validators
+namespace GQL.GraphQLCore.Validators
 {
     interface ICurrentEnterLeaveListenerState
     {

@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using P7Core.Writers;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
-    public interface IGraphQLJsonDocumentWriterOptions:IJsonDocumentWriterOptions
+    public interface IGraphQLJsonDocumentWriterOptions : IJsonDocumentWriterOptions
     {
     }
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AuthRequiredDemoGraphQL.Models;
+using GQL.GraphQLCore;
 using GraphQL;
 using GraphQL.Types;
-using P7Core.GraphQLCore;
 
 namespace AuthRequiredDemoGraphQL.Query
 {

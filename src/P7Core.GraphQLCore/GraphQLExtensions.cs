@@ -5,7 +5,7 @@ using GraphQL;
 using GraphQL.Builders;
 using GraphQL.Types;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public static class GraphQLExtensions
     {

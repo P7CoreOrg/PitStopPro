@@ -6,8 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using GraphQLPlay.IdentityModelExtras;
-using GraphQLPlay.IdentityModelExtras.Extensions;
+using GQL.IdentityModelExtras;
+using GQL.IdentityModelExtras.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,10 +24,10 @@ using P7Core.ObjectContainers.Extensions;
 using Swashbuckle.AspNetCore.Swagger;
 using static GraphQLPlay.Rollup.Extensions.AspNetCoreExtensions;
 
-namespace CustomerManagementAPI.Host
+namespace GQL.Host.Core
 {
     public abstract class GraphQLRollupStartup<T> : IGraphQLRollupRegistrations
-        where T: class
+        where T : class
     {
         protected readonly IHostingEnvironment _hostingEnvironment;
         public IConfiguration Configuration { get; }

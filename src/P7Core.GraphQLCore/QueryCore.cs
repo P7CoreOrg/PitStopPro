@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using GraphQL.Types;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public class QueryCore : ObjectGraphType<object>
     {
@@ -9,7 +9,7 @@ namespace P7Core.GraphQLCore
 
         public QueryCore()
         {
-            
+
         }
         public QueryCore(IQueryFieldRegistrationStore fieldStore)
         {

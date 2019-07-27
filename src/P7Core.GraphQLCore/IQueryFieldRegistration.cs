@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using GraphQL.Language.AST;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public interface IQueryFieldRegistration
     {

@@ -1,4 +1,4 @@
-﻿namespace P7Core.GraphQLCore
+﻿namespace GQL.GraphQLCore
 {
     public interface ISubscriptionFieldRegistrationStore
     {

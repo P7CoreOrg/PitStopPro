@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
+using GQL.Contracts;
+using GQL.GraphQLCore.Controllers;
+using GQL.GraphQLCore.Validators;
 using GraphQL;
 using GraphQL.Http;
 using GraphQL.Types;
-using GraphQLPlay.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using P7Core.GraphQLCore.Controllers;
-using P7Core.GraphQLCore.Validators;
 
-namespace GraphQLHost.Core.Controllers
+namespace GQL.Host.Core.Controllers
 {
     [Route("api/v1/[controller]")]
     public class GraphQLController : GraphQLControllerBase<GraphQLController>

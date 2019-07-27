@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using GraphQLPlay.Contracts;
+using GQL.Contracts;
 
-namespace P7Core.GraphQLCore.Stores
+namespace GQL.GraphQLCore.Stores
 {
-    public class DefaultScopedSummaryLogger : Dictionary<string,string>,IScopedSummaryLogger
+    public class DefaultScopedSummaryLogger : Dictionary<string, string>, IScopedSummaryLogger
     {
     }
 }

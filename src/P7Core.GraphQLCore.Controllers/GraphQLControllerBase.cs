@@ -9,16 +9,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using P7Core.GraphQLCore.Validators;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using GraphQLPlay.Contracts;
+using GQL.Contracts;
+using GQL.GraphQLCore;
+using GQL.GraphQLCore.Validators;
 
-namespace P7Core.GraphQLCore.Controllers
+namespace GQL.GraphQLCore.Controllers
 {
     [Produces("application/json")]
     public class GraphQLControllerBase<T> : Controller where T : class

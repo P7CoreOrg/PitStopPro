@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using GraphQL.Language.AST;
 
-namespace P7Core.GraphQLCore.Validators
+namespace GQL.GraphQLCore.Validators
 {
     public class OptOutGraphQLClaimsAuthorizationCheck : IGraphQLClaimsAuthorizationCheck
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GraphQLPlay.IdentityModelExtras
+namespace GQL.IdentityModelExtras
 {
     public class WellknownAuthority
     {

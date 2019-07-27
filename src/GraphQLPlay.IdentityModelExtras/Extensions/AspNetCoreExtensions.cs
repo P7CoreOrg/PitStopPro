@@ -1,8 +1,7 @@
-﻿
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace GraphQLPlay.IdentityModelExtras.Extensions
+namespace GQL.IdentityModelExtras.Extensions
 {
     public static class AspNetCoreExtensions
     {

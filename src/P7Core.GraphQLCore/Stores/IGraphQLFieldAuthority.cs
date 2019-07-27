@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GraphQL.Language.AST;
 
-namespace P7Core.GraphQLCore.Stores
+namespace GQL.GraphQLCore.Stores
 {
     public enum GraphQLFieldAuthority_CODE
     {

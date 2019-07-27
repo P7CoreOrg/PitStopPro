@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 
-namespace P7Core.GraphQLCore.Controllers
+namespace GQL.GraphQLCore.Controllers
 {
     public class GraphQLQuery
     {

@@ -1,12 +1,13 @@
 using AuthRequiredDemoGraphQL.Extensions;
+using GQL.GraphQLCore.Extensions;
+using GQL.GraphQLCore.Stores;
+using GQL.Host.Core;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
-using P7Core.GraphQLCore.Extensions;
-using P7Core.GraphQLCore.Stores;
 
 namespace CustomerManagementAPI.Host
 {

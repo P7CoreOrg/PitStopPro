@@ -4,7 +4,7 @@ using System.Text;
 using GraphQL.Language.AST;
 using GraphQL.Types;
 
-namespace P7Core.GraphQLCore.Types
+namespace GQL.GraphQLCore.Types
 {
     public class DynamicType : ScalarGraphType
     {

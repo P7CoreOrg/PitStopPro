@@ -8,10 +8,10 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using GQL.Utils.Models;
 using Newtonsoft.Json;
-using Utils.Models;
 
-namespace Utils.EfficientApiCalls
+namespace GQL.Utils.EfficientApiCalls
 {
     [ExcludeFromCodeCoverage]
     public class HttpClientHelpers
@@ -23,7 +23,7 @@ namespace Utils.EfficientApiCalls
             T content,
             CancellationToken cancellationToken)
         {
-          
+
             using (var request = new HttpRequestMessage(HttpMethod.Post, url))
             {
                 var json = JsonConvert.SerializeObject(content);

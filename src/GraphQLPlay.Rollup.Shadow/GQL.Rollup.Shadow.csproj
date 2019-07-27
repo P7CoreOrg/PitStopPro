@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>GraphQLPlay.Rollup</RootNamespace>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Exclude the project from analysis -->
+    <SonarQubeExclude>true</SonarQubeExclude>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraphQLPlay.Contracts\GQL.Contracts.csproj" />
+    <ProjectReference Include="..\P7Core.GraphQLCore.Controllers\GQL.GraphQLCore.Controllers.csproj" />
+    <ProjectReference Include="..\P7Core.GraphQLCore\GQL.GraphQLCore.csproj" />
+    <ProjectReference Include="..\Utils\GQL.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

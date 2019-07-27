@@ -9,7 +9,7 @@ using GraphQL.Language.AST;
 using GraphQL.Validation;
 using P7Core.Utils;
 
-namespace P7Core.GraphQLCore.Validators
+namespace GQL.GraphQLCore.Validators
 {
 
     public class EnterLeaveListenerState
@@ -24,16 +24,16 @@ namespace P7Core.GraphQLCore.Validators
         public FragmentDefinition FragmentDefinition { get; set; }
         public OperationType OperationType { get; set; }
         public string CurrentFieldPath { get; set; }
-        
+
     }
 
-     
+
 
     public interface IEnterLeaveListenerEventSink
     {
         void OnEvent(EnterLeaveListenerState enterLeaveListenerState);
     }
-    public class MyEnterLeaveListener : EventSource<IEnterLeaveListenerEventSink>,INodeVisitor
+    public class MyEnterLeaveListener : EventSource<IEnterLeaveListenerEventSink>, INodeVisitor
     {
         private OperationType OperationType { get; set; }
 
@@ -44,7 +44,7 @@ namespace P7Core.GraphQLCore.Validators
 
         public string CurrentFieldPath
         {
-            get { return (RunningPath.Any() ? RunningPath.Peek() : ""); }
+            get { return RunningPath.Any() ? RunningPath.Peek() : ""; }
         }
 
         private readonly List<INodeVisitor> _listeners =

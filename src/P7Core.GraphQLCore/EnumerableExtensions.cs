@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public static class EnumerableExtensions
     {
@@ -128,7 +128,7 @@ namespace P7Core.GraphQLCore
         /// <param name="itemToAdd">The item to be conditionally added.</param>
         public static void Fill<T>(this IList<T> items, T itemToAdd)
         {
-            Fill(items, new[] { itemToAdd });
+            items.Fill(new[] { itemToAdd });
         }
 
         /// <summary>

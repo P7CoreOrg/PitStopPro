@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using GQL.GraphQLCore.Extensions;
+using GQL.GraphQLCore.Stores;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using P7Core.GraphQLCore.Extensions;
-using P7Core.GraphQLCore.Stores;
 using System;
 
 

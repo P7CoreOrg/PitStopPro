@@ -1,12 +1,12 @@
 ﻿using System.Security.Claims;
+using GQL.GraphQLCore.Models;
+using GQL.GraphQLCore.Stores;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using P7Core.GraphQLCore.Models;
-using P7Core.GraphQLCore.Stores;
 
 
-namespace P7Core.GraphQLCore.Extensions
+namespace GQL.GraphQLCore.Extensions
 {
     public static class ConfigurationServicesExtension
     {

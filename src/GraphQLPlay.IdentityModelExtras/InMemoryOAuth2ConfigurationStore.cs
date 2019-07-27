@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace GraphQLPlay.IdentityModelExtras
+namespace GQL.IdentityModelExtras
 {
     /*
      "authorities": [
@@ -50,7 +50,7 @@ namespace GraphQLPlay.IdentityModelExtras
     }
     public class InMemoryOAuth2ConfigurationStore : IOAuth2ConfigurationStore
     {
-        
+
         private IConfiguration _configuration;
         private ILogger<InMemoryOAuth2ConfigurationStore> _logger;
         private Oauth2Section _oAuth2Section;
@@ -69,8 +69,8 @@ namespace GraphQLPlay.IdentityModelExtras
         public Task<WellknownAuthority> GetWellknownAuthorityAsync(string scheme)
         {
             var result = from item in _oAuth2Section.Authorities
-                where item.Scheme == scheme
-                select item;
+                         where item.Scheme == scheme
+                         select item;
             return Task.FromResult(result.FirstOrDefault());
 
         }

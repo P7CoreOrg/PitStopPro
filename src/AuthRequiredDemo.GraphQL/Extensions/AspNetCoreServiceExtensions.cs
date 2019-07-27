@@ -1,7 +1,7 @@
 ﻿using AuthRequiredDemoGraphQL.Models;
 using AuthRequiredDemoGraphQL.Query;
+using GQL.GraphQLCore;
 using Microsoft.Extensions.DependencyInjection;
-using P7Core.GraphQLCore;
 
 
 namespace AuthRequiredDemoGraphQL.Extensions

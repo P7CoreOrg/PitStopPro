@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\P7Core.GraphQLCore\P7Core.GraphQLCore.csproj" />
+    <ProjectReference Include="..\P7Core.GraphQLCore\GQL.GraphQLCore.csproj" />
   </ItemGroup>
 
 </Project>

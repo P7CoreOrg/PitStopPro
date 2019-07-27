@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GraphQL.Language.AST;
 using Microsoft.Extensions.Options;
 
-namespace P7Core.GraphQLCore.Stores
+namespace GQL.GraphQLCore.Stores
 {
     public class InMemoryGraphQLFieldAuthority : IGraphQLFieldAuthority
     {
@@ -27,8 +27,8 @@ namespace P7Core.GraphQLCore.Stores
                     }
 
                     var query = from item in record.Claims
-                        let c = new Claim(item.Type, item.Value)
-                        select c;
+                                let c = new Claim(item.Type, item.Value)
+                                select c;
                     var claims = query.ToList();
                     AddClaims(record.OperationType, record.FieldPath, claims);
 
@@ -88,7 +88,7 @@ namespace P7Core.GraphQLCore.Stores
         }
         public async Task AddClaimsAsync(OperationType operationType, string fieldPath, List<Claim> claims)
         {
-             AddClaims(operationType, fieldPath, claims);
+            AddClaims(operationType, fieldPath, claims);
         }
         public async Task RemoveClaimsAsync(OperationType operationType, string fieldPath, List<Claim> claims)
         {

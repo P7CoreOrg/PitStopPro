@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using GQL.GraphQLCore;
+using Newtonsoft.Json;
 
-namespace P7Core.GraphQLCore.Extensions
+namespace GQL.GraphQLCore.Extensions
 {
     internal class GraphQLJsonDocumentWriterOptions : IGraphQLJsonDocumentWriterOptions
     {

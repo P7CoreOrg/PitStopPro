@@ -1,5 +1,5 @@
 ﻿using System.Net.Http;
-using GraphQLPlay.IdentityModelExtras;
+using GQL.IdentityModelExtras;
 using Microsoft.AspNetCore.TestHost;
 
 namespace TestServerFixture

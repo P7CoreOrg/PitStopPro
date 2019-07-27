@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 
-namespace GraphQLPlay.IdentityModelExtras
+namespace GQL.IdentityModelExtras
 {
     public class DefaultHttpClientFactory : IDefaultHttpClientFactory
     {

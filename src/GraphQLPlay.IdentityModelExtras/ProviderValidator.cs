@@ -9,7 +9,7 @@ using IdentityModel.Client;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
 
-namespace GraphQLPlay.IdentityModelExtras
+namespace GQL.IdentityModelExtras
 {
     public class ProviderValidator
     {
@@ -71,7 +71,7 @@ namespace GraphQLPlay.IdentityModelExtras
         public async Task<ClaimsPrincipal> ValidateToken(string idToken, TokenValidationParameters tvp)
         {
             var doc = await GetDiscoveryResponseAsync();
-            var certificates = await this.FetchCertificates();
+            var certificates = await FetchCertificates();
             tvp.IssuerSigningKeys = certificates;
             tvp.ValidIssuers = new List<string> { doc.Issuer };
             if (!string.IsNullOrEmpty(_audience))

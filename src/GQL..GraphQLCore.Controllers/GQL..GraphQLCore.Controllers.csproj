@@ -21,7 +21,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\P7Core.GraphQLCore\P7Core.GraphQLCore.csproj" />
+    <ProjectReference Include="..\GQL.GraphQLCore\GQL.GraphQLCore.csproj" />
   </ItemGroup>
 
 </Project>

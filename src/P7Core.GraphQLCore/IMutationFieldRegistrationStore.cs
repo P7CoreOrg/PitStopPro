@@ -2,7 +2,7 @@
 using System.Linq;
 using GraphQL.Types;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public interface IMutationFieldRegistrationStore
     {

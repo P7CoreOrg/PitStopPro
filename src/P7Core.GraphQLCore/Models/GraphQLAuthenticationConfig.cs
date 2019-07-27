@@ -1,4 +1,4 @@
-﻿namespace P7Core.GraphQLCore.Models
+﻿namespace GQL.GraphQLCore.Models
 {
     public class GraphQLAuthenticationConfig
     {

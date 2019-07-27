@@ -1,4 +1,4 @@
-﻿namespace Utils.Models
+﻿namespace GQL.Utils.Models
 {
     public class HttpHeader
     {

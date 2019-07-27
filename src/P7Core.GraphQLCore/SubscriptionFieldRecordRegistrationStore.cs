@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public class SubscriptionFieldRecordRegistrationStore :
         ISubscriptionFieldRegistrationStore

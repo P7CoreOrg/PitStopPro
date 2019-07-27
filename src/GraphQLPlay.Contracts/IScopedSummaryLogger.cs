@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace GraphQLPlay.Contracts
+namespace GQL.Contracts
 {
     public interface ISummaryLogger : IDictionary<string, string>
     {

@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using GQL.Contracts;
+using GQL.GraphQLCore;
+using GQL.GraphQLCore.Stores;
+using GQL.GraphQLCore.Types;
+using GQL.GraphQLCore.Validators;
 using GraphQL;
 using GraphQL.Execution;
 using GraphQL.Http;
 using GraphQL.Types;
 using GraphQL.Validation;
 using GraphQL.Validation.Complexity;
-using GraphQLPlay.Contracts;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using P7Core.GraphQLCore.Stores;
-using P7Core.GraphQLCore.Types;
-using P7Core.GraphQLCore.Validators;
 
-namespace P7Core.GraphQLCore.Extensions
+namespace GQL.GraphQLCore.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -24,9 +25,9 @@ namespace P7Core.GraphQLCore.Extensions
             services.AddScoped<DefaultScopedSummaryLogger>();
             services.AddScoped<IScopedSummaryLogger>(x => x.GetService<DefaultScopedSummaryLogger>());
             services.AddTransient<ISummaryLogger>(x => x.GetService<DefaultScopedSummaryLogger>());
-          
 
-            services.AddTransient<IQueryFieldRegistrationStore,QueryFieldRecordRegistrationStore>();
+
+            services.AddTransient<IQueryFieldRegistrationStore, QueryFieldRecordRegistrationStore>();
             services.AddTransient<IMutationFieldRegistrationStore, MutationFieldRecordRegistrationStore>();
             services.AddTransient<ISubscriptionFieldRegistrationStore, SubscriptionFieldRecordRegistrationStore>();
 
@@ -62,7 +63,7 @@ namespace P7Core.GraphQLCore.Extensions
             services.AddTransient<QueryCore>();
             services.AddTransient<MutationCore>();
             services.AddTransient<SubscriptionCore>();
-            
+
             services.AddTransient<ISchema, SchemaCore>();
             services.TryAddTransient<Func<Type, GraphType>>(
                 x =>

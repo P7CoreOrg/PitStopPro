@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using GraphQL.Types;
 
-namespace P7Core.GraphQLCore
+namespace GQL.GraphQLCore
 {
     public class FieldRecord<TSourceType>
     {
