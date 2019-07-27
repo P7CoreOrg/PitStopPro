@@ -27,6 +27,7 @@ function Check {
 $DockerOS = docker version -f "{{ .Server.Os }}"
 $ImageName = "dotnetcore/pitstoppro"
 $TestImageName = "dotnetcore/pitstoppro:test"
+$PackImageName = "dotnetcore/pitstoppro:pack"
 $Dockerfile = "Dockerfile"
 
 PrintElapsedTime
@@ -39,6 +40,11 @@ Log "Build test runner image"
 docker build --pull --target testrunner -t $TestImageName -f $Dockerfile .
 PrintElapsedTime
 Check "docker build (test runner)"
+
+Log "Build pack runner image"
+docker build --pull --target packrunner -t $PackImageName -f $Dockerfile .
+PrintElapsedTime
+Check "docker build (pack runner)"
 
 $TestResults = "TestResults"
 $TestResultsDir = Join-Path $PSScriptRoot $TestResults
@@ -53,11 +59,26 @@ if (!$TestResultsDirExists) {
 }
 Log $TestResultsDir
 
+$DistResults = "dist"
+$DistDir = Join-Path $PSScriptRoot $DistResults
+$DistDirExists = (Test-Path -Path $DistDir)
+Log "Check if $DistDir directory exists: $DistDirExists"
+
+if (!$DistDirExists) {
+    Log "Create $DistDir folder"
+    mkdir $DistDir
+    gci . DistDir -ad
+}
+Log $DistDir
+
+
 Log "Run test container with test runner image"
 
 if ($DockerOS -eq "linux") {
     Log "Environment: Linux containers"
-    docker run --rm -v ${TestResultsDir}:/app/test/${TestResults} $TestImageName        
+    docker run --rm -v ${TestResultsDir}:/app/test/${TestResults}	$TestImageName 
+    echo docker run --rm -v ${DistDir}:/app/dist						$PackImageName      
+    docker run --rm -v ${DistDir}:/app/dist						$PackImageName      
 }
 else {
     Log "Environment: Windows containers"
@@ -71,3 +92,9 @@ $testfiles = gci $TestResultsDir *.trx | Sort-Object -Property LastWriteTime | s
 Log "Docker image built: $ImageName"
 Log "Test log file:"
 Write-Output $testfiles
+
+$distfiles = gci $DistDir *.nupkg | Sort-Object -Property LastWriteTime | select -last 1
+
+Log "Docker image built: $ImageName"
+Log "Dist file:"
+Write-Output $distfiles

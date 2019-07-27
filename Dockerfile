@@ -27,9 +27,14 @@ RUN dotnet restore
 
 RUN dotnet build   -c Release --no-restore -p:Version=${VERSION}
 RUN dotnet publish -c Release --no-restore -o "../../dist/publish" 
-RUN dotnet pack    -c Release --no-restore -o "../../dist/pack"
+# RUN dotnet pack    -c Release --no-restore -o "../../dist/pack"
 
 # test application -- see: dotnet-docker-unit-testing.md
 FROM build AS testrunner
 WORKDIR /app
 ENTRYPOINT ["dotnet", "test", "--logger:trx"]
+
+# test application -- see: dotnet-docker-unit-testing.md
+FROM build AS packrunner
+WORKDIR /app
+ENTRYPOINT ["dotnet", "pack","-c", "Release","--no-restore","-o","../../dist/pack"]
