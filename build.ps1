@@ -31,7 +31,7 @@ $Dockerfile = "Dockerfile"
 
 PrintElapsedTime
 Log "Build application image"
-docker build --pull -t $ImageName -f $Dockerfile .
+docker build --pull -t $ImageName -f $Dockerfile --build-arg VERSION=0.0.3 .
 PrintElapsedTime
 Check "docker build (application)"
 

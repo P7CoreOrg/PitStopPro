@@ -10,9 +10,9 @@
     <SonarQubeExclude>true</SonarQubeExclude>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GQL.GraphQLCore.Controllers\GQL..GraphQLCore.Controllers.csproj" />
+    <ProjectReference Include="..\GQL.GraphQLCore.Controllers\GQL.GraphQLCore.Controllers.csproj" />
     <ProjectReference Include="..\GQL.GraphQLCore\GQL.GraphQLCore.csproj" />
-    <ProjectReference Include="..\Utils\GQL.Utils.csproj" />
+    <ProjectReference Include="..\GQL.Utils\GQL.Utils.csproj" />
   </ItemGroup>
 
 </Project>

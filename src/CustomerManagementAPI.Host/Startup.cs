@@ -1,7 +1,6 @@
 using AuthRequiredDemoGraphQL.Extensions;
 using GQL.GraphQLCore.Extensions;
 using GQL.GraphQLCore.Stores;
-using GQL.Host.Core;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;

@@ -24,10 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AuthRequiredDemo.GraphQL\AuthRequiredDemo.GraphQL.csproj" />
-    <ProjectReference Include="..\GraphQLHost.Core\GQL.Host.Core.csproj" />
-    <ProjectReference Include="..\GraphQLPlay.IdentityModelExtras\GQL.IdentityModelExtras.csproj" />
-    <ProjectReference Include="..\GraphQLPlay.Rollup.Shadow\GQL.Rollup.Shadow.csproj" />
-    <ProjectReference Include="..\MultiAuthority.AccessTokenValidation\GQL.MultiAuthority.AccessTokenValidation.csproj" />
+    <ProjectReference Include="..\GQL.GraphQLHost.Core\GQL.GraphQLHost.Core.csproj" />
   </ItemGroup>
 
 </Project>

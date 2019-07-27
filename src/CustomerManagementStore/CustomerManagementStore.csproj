@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SimpleDocumentStore\SimpleDocumentStore.csproj" />
+    <ProjectReference Include="..\GQL.SimpleDocumentStore\GQL.SimpleDocumentStore.csproj" />
   </ItemGroup>
 
 </Project>
