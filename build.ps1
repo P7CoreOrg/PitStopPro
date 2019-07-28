@@ -27,8 +27,7 @@ function Check {
 $DockerOS = docker version -f "{{ .Server.Os }}"
 $ImageName = "dotnetcore/pitstoppro"
 $TestImageName = "dotnetcore/pitstoppro:test"
-$PackImageName = "dotnetcore/pitstoppro:pack"
-$PublishImageName = "dotnetcore/pitstoppro:publish"
+$DistImageName = "dotnetcore/pitstoppro:dist"
 $Dockerfile = "Dockerfile"
 
 PrintElapsedTime
@@ -42,15 +41,11 @@ docker build --pull --target testrunner -t $TestImageName -f $Dockerfile .
 PrintElapsedTime
 Check "docker build (test runner)"
 
-Log "Build pack runner image"
-docker build --pull --target packrunner -t $PackImageName -f $Dockerfile .
+Log "Build distRunner image"
+docker build --pull --target distrunner -t $DistImageName -f $Dockerfile .
 PrintElapsedTime
 Check "docker build (pack runner)"
 
-Log "Build publish runner image"
-docker build --pull --target publishrunner -t $PublishImageName -f $Dockerfile .
-PrintElapsedTime
-Check "docker build (publish runner)"
 
 $TestResults = "TestResults"
 $TestResultsDir = Join-Path $PSScriptRoot $TestResults
@@ -84,11 +79,7 @@ if ($DockerOS -eq "linux") {
     Log "Environment: Linux containers"
     docker run --rm -v ${TestResultsDir}:/app/test/${TestResults}	$TestImageName 
     
-    echo docker run --rm -v ${DistDir}:/app/dist						$PackImageName      
-    docker run --rm -v ${DistDir}:/app/dist						$PackImageName    
-    
-    echo docker run --rm -v ${DistDir}:/app/dist						$PublishImageName      
-    docker run --rm -v ${DistDir}:/app/dist						$PublishImageName   
+    docker run --rm -v ${DistDir}:/app/distMount					$DistImageName    
 
 }
 else {
