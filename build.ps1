@@ -28,6 +28,7 @@ $DockerOS = docker version -f "{{ .Server.Os }}"
 $ImageName = "dotnetcore/pitstoppro"
 $TestImageName = "dotnetcore/pitstoppro:test"
 $PackImageName = "dotnetcore/pitstoppro:pack"
+$PublishImageName = "dotnetcore/pitstoppro:publish"
 $Dockerfile = "Dockerfile"
 
 PrintElapsedTime
@@ -45,6 +46,11 @@ Log "Build pack runner image"
 docker build --pull --target packrunner -t $PackImageName -f $Dockerfile .
 PrintElapsedTime
 Check "docker build (pack runner)"
+
+Log "Build publish runner image"
+docker build --pull --target publishrunner -t $PublishImageName -f $Dockerfile .
+PrintElapsedTime
+Check "docker build (publish runner)"
 
 $TestResults = "TestResults"
 $TestResultsDir = Join-Path $PSScriptRoot $TestResults
@@ -77,8 +83,13 @@ Log "Run test container with test runner image"
 if ($DockerOS -eq "linux") {
     Log "Environment: Linux containers"
     docker run --rm -v ${TestResultsDir}:/app/test/${TestResults}	$TestImageName 
+    
     echo docker run --rm -v ${DistDir}:/app/dist						$PackImageName      
-    docker run --rm -v ${DistDir}:/app/dist						$PackImageName      
+    docker run --rm -v ${DistDir}:/app/dist						$PackImageName    
+    
+    echo docker run --rm -v ${DistDir}:/app/dist						$PublishImageName      
+    docker run --rm -v ${DistDir}:/app/dist						$PublishImageName   
+
 }
 else {
     Log "Environment: Windows containers"
@@ -98,3 +109,4 @@ $distfiles = gci $DistDir *.nupkg | Sort-Object -Property LastWriteTime | select
 Log "Docker image built: $ImageName"
 Log "Dist file:"
 Write-Output $distfiles
+
