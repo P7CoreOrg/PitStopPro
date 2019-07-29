@@ -2,9 +2,9 @@ FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /app
 COPY ./PitStopPro.sln ./nuget.config ./LICENSE ./publish.sh ./distRunner.sh ./
 
-
-ARG VERSION=0.0.0
-RUN echo "VERSION=${VERSION}"  
+ 
+ARG Version=0.0.0
+RUN echo "Version=$Version"  
 
 # copy csproj and restore as distinct layers
 
@@ -21,9 +21,9 @@ RUN find -type d -name bin -prune -exec rm -rf {} \; && find -type d -name obj -
 
 RUN dotnet restore
 
-RUN dotnet build   -c Release --no-restore -p:Version=${VERSION}
+RUN dotnet build   -c Release --no-restore -p:Version=$Version
+RUN dotnet pack    -c Release --no-restore -p:Version=$Version -o "../../dist/pack"
 RUN dotnet publish -c Release --no-restore -o "../../dist/publish/CustomerManagementAPI.Host/"  "./src/CustomerManagementAPI.Host/CustomerManagementAPI.Host.csproj"
-RUN dotnet pack    -c Release --no-restore -o "../../dist/pack"
 
 # RUN dotnet publish -c Release --no-restore -o "../../dist/publish" 
 # RUN dotnet pack    -c Release --no-restore -o "../../dist/pack"

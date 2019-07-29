@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hosts", "hosts", "{336D3FC0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerManagementAPI.Host", "src\CustomerManagementAPI.Host\CustomerManagementAPI.Host.csproj", "{E2F6AC24-339D-48A5-9C8B-C8E3A58AC27E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GQL.Rollup.Shadow", "src\GQL.Rollup.Shadow\GQL.Rollup.Shadow.csproj", "{83BBAF51-4097-4F7D-A572-EFC92D3239B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GQL.Rollup", "src\GQL.Rollup\GQL.Rollup.csproj", "{83BBAF51-4097-4F7D-A572-EFC92D3239B7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GQL.Utils", "src\GQL.Utils\GQL.Utils.csproj", "{75726072-1EF4-4413-83AD-05DB828404FA}"
 EndProject

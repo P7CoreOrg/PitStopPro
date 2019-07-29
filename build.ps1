@@ -30,19 +30,21 @@ $TestImageName = "dotnetcore/pitstoppro:test"
 $DistImageName = "dotnetcore/pitstoppro:dist"
 $Dockerfile = "Dockerfile"
 
+$Version = "0.0.3"
+
 PrintElapsedTime
 Log "Build application image"
-docker build --pull -t $ImageName -f $Dockerfile --build-arg VERSION=0.0.3 .
+docker build --no-cache --pull -t $ImageName -f $Dockerfile --build-arg Version=$Version .
 PrintElapsedTime
 Check "docker build (application)"
 
 Log "Build test runner image"
-docker build --pull --target testrunner -t $TestImageName -f $Dockerfile .
+docker build --pull --target testrunner -t $TestImageName -f $Dockerfile --build-arg Version=$Version .
 PrintElapsedTime
 Check "docker build (test runner)"
 
 Log "Build distRunner image"
-docker build --pull --target distrunner -t $DistImageName -f $Dockerfile .
+docker build --pull --target distrunner -t $DistImageName -f $Dockerfile --build-arg Version=$Version .
 PrintElapsedTime
 Check "docker build (pack runner)"
 
