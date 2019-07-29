@@ -1,8 +1,8 @@
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /app
-COPY ./PitStopPro.sln ./nuget.config ./LICENSE ./publish.sh ./distRunner.sh ./
+COPY ./PitStopPro.sln ./nuget.config ./LICENSE  ./distRunner.sh ./
 
- 
+
 ARG Version=0.0.0
 RUN echo "Version=$Version"  
 
@@ -34,7 +34,7 @@ FROM build AS testrunner
 WORKDIR /app
 ENTRYPOINT ["dotnet", "test", "--logger:trx"]
 
- 
+
 
 # distrunner application -- see: dotnet-docker-unit-testing.md
 FROM build AS distrunner
