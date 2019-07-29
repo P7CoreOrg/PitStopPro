@@ -22,11 +22,11 @@ using Microsoft.IdentityModel.Tokens;
 using MultiAuthority.AccessTokenValidation;
 using P7Core.ObjectContainers.Extensions;
 using Swashbuckle.AspNetCore.Swagger;
-using static GraphQLPlay.Rollup.Extensions.AspNetCoreExtensions;
+using GQL.Rollup.Extensions;
 
 namespace CustomerManagementAPI.Host
 {
-    public abstract class GraphQLRollupStartup<T> : IGraphQLRollupRegistrations
+    public abstract class GraphQLRollupStartup<T> : GQL.Rollup.Extensions.AspNetCoreExtensions.IGraphQLRollupRegistrations
         where T: class
     {
         protected readonly IHostingEnvironment _hostingEnvironment;

@@ -6,7 +6,7 @@ using GQL.GraphQLCore.Stores;
 using System;
 
 
-namespace GraphQLPlay.Rollup.Extensions
+namespace GQL.Rollup.Extensions
 {
     public static class AspNetCoreExtensions
     {
@@ -24,7 +24,7 @@ namespace GraphQLPlay.Rollup.Extensions
             graphQLRollupRegistrations.AddGraphQLApis(services);
             return services;
         }
-        public static IServiceCollection AddGraphQLPlayRollupInMemoryServices(this IServiceCollection services,  IConfiguration configuration)
+        public static IServiceCollection AddGraphQLPlayRollupInMemoryServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.TryAddSingleton<IGraphQLFieldAuthority, InMemoryGraphQLFieldAuthority>();
             services.RegisterGraphQLCoreConfigurationServices(configuration);

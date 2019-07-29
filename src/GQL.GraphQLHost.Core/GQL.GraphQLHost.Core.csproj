@@ -13,7 +13,7 @@
     <ProjectReference Include="..\GQL.GraphQLCore.Controllers\GQL.GraphQLCore.Controllers.csproj" />
     <ProjectReference Include="..\GQL.IdentityModelExtras\GQL.IdentityModelExtras.csproj" />
     <ProjectReference Include="..\GQL.MultiAuthority.AccessTokenValidation\GQL.MultiAuthority.AccessTokenValidation.csproj" />
-    <ProjectReference Include="..\GQL.Rollup.Shadow\GQL.Rollup.Shadow.csproj" />
+    <ProjectReference Include="..\GQL.Rollup\GQL.Rollup.csproj" />
   </ItemGroup>
 
 </Project>

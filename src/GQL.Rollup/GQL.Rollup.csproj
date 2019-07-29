@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <RootNamespace>GraphQLPlay.Rollup</RootNamespace>
+    <RootNamespace>GQL.Rollup</RootNamespace>
     <DebugType>None</DebugType>
   </PropertyGroup>
   <PropertyGroup>
     <!-- Exclude the project from analysis -->
     <SonarQubeExclude>true</SonarQubeExclude>
+    <AssemblyName>GQL.Rollup</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\GQL.GraphQLCore.Controllers\GQL.GraphQLCore.Controllers.csproj" />
