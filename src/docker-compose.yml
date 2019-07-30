@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  customermanagementapihost:
+    image: pitstoppro/customermanagementapihost:latest
+    build: CustomerManagementAPI.Host
+    volumes:
+      - ${CERTIFICATE_PATH}:/root/.dotnet/https
+    ports:
+      - 5100:80
+      - 5101:443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=${ASPNETCORE_URLS}
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${ASPNETCORE_KESTREL_CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${ASPNETCORE_KESTREL_CERTIFICATE_PATH}
+      - ASPNETCORE_HTTPS_PORT=5101
