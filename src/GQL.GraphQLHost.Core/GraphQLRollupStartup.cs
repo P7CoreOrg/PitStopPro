@@ -157,10 +157,11 @@ namespace CustomerManagementAPI.Host
                 checks.WithDefaultCacheDuration(TimeSpan.FromSeconds(1));
                 AddHealthChecks(checks);
             });
-
+            AddAdditionalServices(services);
             return services.BuildServiceProvider();
         }
 
+        protected abstract void AddAdditionalServices(IServiceCollection services);
         protected abstract void AddHealthChecks(HealthCheckBuilder checks);
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

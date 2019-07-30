@@ -10,3 +10,15 @@
         <p>Discover <a href="~/hc">Health Check</a>.</p>
     </div>
 
+    <form method="post">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <button type="submit" asp-page-handler="ResetCachedTime" class="pull-right btn btn-danger">Reset Cached Time</button>
+                <h3 class="panel-title" style="line-height:2.1">Cached Time (UTC)</h3>
+            </div>
+            <div class="panel-body">
+                <p>The current time is: @DateTime.UtcNow.ToString()</p>
+                <p>The cached time is: @Model.CachedTimeUTC</p>
+            </div>
+        </div>
+    </form>

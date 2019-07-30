@@ -38,5 +38,14 @@ namespace CustomerManagementAPI.Host
         {
             checks.AddUrlCheck("https://www.google.com");
         }
+
+        protected override void AddAdditionalServices(IServiceCollection services)
+        {
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost";
+                options.InstanceName = "redis";
+            });
+        }
     }
 }
