@@ -39,7 +39,8 @@ namespace CustomerManagementAPI.Host
                     logging.AddDebug();
                     logging.AddEventSourceLogger();
                     logging.AddAzureWebAppDiagnostics();
-                });
+                })
+            .UseHealthChecks("/hc");
 
         public static void LoadConfigurations(IConfigurationBuilder config, string environmentName)
         {

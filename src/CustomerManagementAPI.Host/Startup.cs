@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.HealthChecks;
 using Microsoft.Extensions.Logging;
 
 namespace CustomerManagementAPI.Host
@@ -33,6 +34,9 @@ namespace CustomerManagementAPI.Host
             services.AddGraphQLAuthRequiredQuery();
         }
 
-       
+        protected override void AddHealthChecks(HealthCheckBuilder checks)
+        {
+            checks.AddUrlCheck("https://www.google.com");
+        }
     }
 }

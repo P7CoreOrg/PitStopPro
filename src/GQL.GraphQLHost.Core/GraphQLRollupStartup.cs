@@ -23,6 +23,7 @@ using MultiAuthority.AccessTokenValidation;
 using P7Core.ObjectContainers.Extensions;
 using Swashbuckle.AspNetCore.Swagger;
 using GQL.Rollup.Extensions;
+using Microsoft.Extensions.HealthChecks;
 
 namespace CustomerManagementAPI.Host
 {
@@ -151,8 +152,16 @@ namespace CustomerManagementAPI.Host
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+            services.AddHealthChecks(checks =>
+            {
+                checks.WithDefaultCacheDuration(TimeSpan.FromSeconds(1));
+                AddHealthChecks(checks);
+            });
+
             return services.BuildServiceProvider();
         }
+
+        protected abstract void AddHealthChecks(HealthCheckBuilder checks);
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
