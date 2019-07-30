@@ -48,6 +48,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestServerFixture", "src\Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTest_CustomerManagementStore", "src\XUnitTest_CustomerManagementStore\XUnitTest_CustomerManagementStore.csproj", "{6069BCCE-159D-48F0-BC19-D39FF0874AEA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eventing", "Eventing", "{AE5A72AB-69BF-4365-B251-39EDB0B452C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitstop.Infrastructure.Messaging", "Pitstop.Infrastructure.Messaging\Pitstop.Infrastructure.Messaging.csproj", "{62E40EE6-C609-4114-B7DB-812C7BAA8371}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +118,10 @@ Global
 		{6069BCCE-159D-48F0-BC19-D39FF0874AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6069BCCE-159D-48F0-BC19-D39FF0874AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6069BCCE-159D-48F0-BC19-D39FF0874AEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62E40EE6-C609-4114-B7DB-812C7BAA8371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62E40EE6-C609-4114-B7DB-812C7BAA8371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62E40EE6-C609-4114-B7DB-812C7BAA8371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62E40EE6-C609-4114-B7DB-812C7BAA8371}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,6 +142,7 @@ Global
 		{BE1EB26C-1FB9-459B-A93D-1488F779F9C2} = {2033E8C6-EE24-4D8C-BC01-D5CCF17D34C9}
 		{F393D369-F9B7-4AD1-BE5F-2EDDB01E27D9} = {6BB94A19-F5D7-4CEF-88A3-9E8610CB564A}
 		{6069BCCE-159D-48F0-BC19-D39FF0874AEA} = {6BB94A19-F5D7-4CEF-88A3-9E8610CB564A}
+		{62E40EE6-C609-4114-B7DB-812C7BAA8371} = {AE5A72AB-69BF-4365-B251-39EDB0B452C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40CA8DF3-11D5-48E1-9D3D-DE4FF71A97B4}

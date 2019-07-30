@@ -46,6 +46,7 @@ namespace CustomerManagementAPI.Host
                 options.Configuration = "localhost";
                 options.InstanceName = "redis";
             });
+            
         }
     }
 }
