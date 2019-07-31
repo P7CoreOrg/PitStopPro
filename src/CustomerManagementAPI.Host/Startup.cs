@@ -1,6 +1,9 @@
 using AuthRequiredDemoGraphQL.Extensions;
+using CustomerManagementAPI.Extensions;
+using CustomerManagementStore.Extensions;
 using GQL.GraphQLCore.Extensions;
 using GQL.GraphQLCore.Stores;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.HealthChecks;
 using Microsoft.Extensions.Logging;
 using Pitstop.Infrastructure.Messaging.Extensions;
+using Serilog;
 
 namespace CustomerManagementAPI.Host
 {
@@ -33,6 +37,7 @@ namespace CustomerManagementAPI.Host
             //  services.AddBurnerGraphQL();
             //   services.AddBurnerGraphQL2();
             services.AddGraphQLAuthRequiredQuery();
+            services.AddGraphQCustomerManagementAPI();
         }
 
         protected override void AddHealthChecks(HealthCheckBuilder checks)
@@ -58,7 +63,21 @@ namespace CustomerManagementAPI.Host
                 options.Configuration = "localhost";
                 options.InstanceName = "redis";
             });
-            
+            services.AddInMemoryCustomerManagmentStore();
+
+
+        }
+        protected override void OnConfigureStart(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            Log.Logger = new LoggerConfiguration()
+               .ReadFrom.Configuration(Configuration)
+               .Enrich.WithMachineName()
+               .CreateLogger();
+        }
+
+        protected override void OnConfigureEnd(IApplicationBuilder app, IHostingEnvironment env)
+        {
+           
         }
     }
 }

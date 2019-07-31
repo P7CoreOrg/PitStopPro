@@ -21,14 +21,14 @@ services:
       - RABBITMQ_DEFAULT_USER=rabbitmquser
       - RABBITMQ_DEFAULT_PASS=DEBmbwkSrzy9D1T9cJfa
 
-mailserver:
+  mailserver:
     image: djfarrelly/maildev
     container_name: mailserver
     ports:
       - "25:25"
       - "4000:80"
-
-logserver:
+      
+  logserver:
     image: datalust/seq:latest
     container_name: logserver
     ports:

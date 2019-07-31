@@ -15,13 +15,14 @@ namespace CustomerManagementAPI.Host.Pages
         public IndexModel(IDistributedCache cache)
         {
             _cache = cache;
+            CachedTimeUTC = "Expired";
         }
 
-        public string CachedTimeUTC { get; private set; }
+        public string CachedTimeUTC { get; set; }
 
-        public async void OnGetAsync()
+        public async Task OnGetAsync()
         {
-            CachedTimeUTC = "Cached Time Expired";
+          
             var encodedCachedTimeUTC = await _cache.GetAsync("cachedTimeUTC");
             if (encodedCachedTimeUTC != null)
             {

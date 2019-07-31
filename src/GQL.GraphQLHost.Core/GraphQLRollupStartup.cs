@@ -167,6 +167,8 @@ namespace CustomerManagementAPI.Host
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            OnConfigureStart(app, env);
+         
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -195,6 +197,10 @@ namespace CustomerManagementAPI.Host
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "GraphQLPlayApiOnly V1");
             });
+            OnConfigureEnd(app, env);
         }
+
+        protected abstract void OnConfigureEnd(IApplicationBuilder app, IHostingEnvironment env);
+        protected abstract void OnConfigureStart(IApplicationBuilder app, IHostingEnvironment env);
     }
 }
