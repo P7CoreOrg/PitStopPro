@@ -33,6 +33,7 @@
     <ProjectReference Include="..\..\Pitstop.Infrastructure.Messaging\Pitstop.Infrastructure.Messaging.csproj" />
     <ProjectReference Include="..\AuthRequiredDemo.GraphQL\AuthRequiredDemo.GraphQL.csproj" />
     <ProjectReference Include="..\GQL.GraphQLHost.Core\GQL.GraphQLHost.Core.csproj" />
+    <ProjectReference Include="..\Pitstop.Infrastructure.Messaging\Pitstop.Infrastructure.Messaging.csproj" />
   </ItemGroup>
 
 </Project>
