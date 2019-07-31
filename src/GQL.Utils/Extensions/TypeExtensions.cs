@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace SimpleDocumentStore.Extensions
+namespace GQL.Utils.Extensions
 {
     public static class TypeExtensions
     {

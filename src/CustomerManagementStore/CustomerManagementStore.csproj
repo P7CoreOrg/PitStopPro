@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GQL.SimpleDocumentStore\GQL.SimpleDocumentStore.csproj" />
+    <ProjectReference Include="..\GQL.Utils\GQL.Utils.csproj" />
   </ItemGroup>
 
 </Project>

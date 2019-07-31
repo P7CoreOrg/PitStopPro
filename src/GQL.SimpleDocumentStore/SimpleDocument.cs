@@ -1,5 +1,6 @@
 ﻿
-using SimpleDocumentStore.Extensions;
+
+using GQL.Utils.Extensions;
 using System;
 
 namespace SimpleDocumentStore

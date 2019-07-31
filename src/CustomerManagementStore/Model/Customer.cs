@@ -1,7 +1,8 @@
-﻿using SimpleDocumentStore.Extensions;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
+using GQL.Utils.Extensions;
 using SimpleDocumentStore;
 
 namespace CustomerManagementStore.Model

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
+using Serilog;
 namespace CustomerManagementAPI.Host
 {
     public class Program
@@ -23,23 +23,15 @@ namespace CustomerManagementAPI.Host
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((hostingContext, config) =>
+            .UseSerilog()
+            .ConfigureAppConfiguration((hostingContext, config) =>
                 {
                     var environmentName = hostingContext.HostingEnvironment.EnvironmentName;
                     LoadConfigurations(config, environmentName);
                     config.AddEnvironmentVariables();
                     config.AddUserSecrets<Startup>();
                 })
-                .UseStartup<Startup>()
-                .ConfigureLogging((hostingContext, logging) =>
-                {
-                    logging.ClearProviders();
-                    logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
-                    logging.AddConsole();
-                    logging.AddDebug();
-                    logging.AddEventSourceLogger();
-                    logging.AddAzureWebAppDiagnostics();
-                })
+            .UseStartup<Startup>()
             .UseHealthChecks("/hc");
 
         public static void LoadConfigurations(IConfigurationBuilder config, string environmentName)

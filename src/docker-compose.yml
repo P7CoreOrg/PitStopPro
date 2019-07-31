@@ -21,12 +21,29 @@ services:
       - RABBITMQ_DEFAULT_USER=rabbitmquser
       - RABBITMQ_DEFAULT_PASS=DEBmbwkSrzy9D1T9cJfa
 
+  mailserver:
+    image: djfarrelly/maildev
+    container_name: mailserver
+    ports:
+      - "25:25"
+      - "4000:80"
+
+  logserver:
+    image: datalust/seq:latest
+    container_name: logserver
+    ports:
+      - "5341:80"
+    environment:
+      - ACCEPT_EULA=Y 
+
   customermanagementapihost:
     image: pitstoppro/customermanagementapihost:latest
     build: CustomerManagementAPI.Host
     depends_on:
       - rabbitmq
       - redis
+      - logserver
+      - mailserver
     volumes:
       - ${CERTIFICATE_PATH}:/root/.dotnet/https
     ports:

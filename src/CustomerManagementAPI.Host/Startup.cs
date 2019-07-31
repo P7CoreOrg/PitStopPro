@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.HealthChecks;
 using Microsoft.Extensions.Logging;
+using Pitstop.Infrastructure.Messaging.Extensions;
 
 namespace CustomerManagementAPI.Host
 {
@@ -41,6 +42,17 @@ namespace CustomerManagementAPI.Host
 
         protected override void AddAdditionalServices(IServiceCollection services)
         {
+            var configSection = Configuration.GetSection("RabbitMQ");
+            string host = configSection["Host"];
+            string userName = configSection["UserName"];
+            string password = configSection["Password"];
+
+            services.AddInfrastructureMessaging((options) =>
+            {
+                options.Host = host;
+                options.Username = userName;
+                options.Password = password;
+            });
             services.AddStackExchangeRedisCache(options =>
             {
                 options.Configuration = "localhost";

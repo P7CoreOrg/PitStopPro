@@ -1,4 +1,4 @@
-﻿namespace SimpleDocumentStore.Extensions
+﻿namespace GQL.Utils.Extensions
 {
     public static class CompareExtensions
     {

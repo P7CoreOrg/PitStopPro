@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SimpleDocumentStore.Extensions
+namespace GQL.Utils.Extensions
 {
     public static class EqualExtensions
     {

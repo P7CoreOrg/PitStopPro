@@ -13,7 +13,7 @@ namespace CustomerManagementStore.Stores
             var result = await base.FetchAsync(id);
             return result?.Document;
         }
-        public async Task UpsertCustomerAsync(Customer customer)
+        public async Task<Customer> UpsertCustomerAsync(Customer customer)
         {
             await base.InsertAsync(new SimpleDocument<Customer>(new MetaData()
             {
@@ -22,6 +22,7 @@ namespace CustomerManagementStore.Stores
             {
                 Id = customer.Id
             });
+            return customer;
         }
         public async Task RemoveCustomerAsync(string id)
         {
