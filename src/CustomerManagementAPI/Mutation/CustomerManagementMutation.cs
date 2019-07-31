@@ -20,11 +20,11 @@ namespace CustomerManagementAPI.Mutation
         {
             mutationCore.FieldAsync<CustomerType>(name: "upsertCustomer",
                 description: null,
-                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<CustomerCreateInputType>> { Name = "customer" }),
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<CustomerCreateInputType>> { Name = "input" }),
                 resolve: async context =>
                 {
 
-                    var input = context.GetArgument<CustomerCreateInput>("customer");
+                    var input = context.GetArgument<CustomerCreateInput>("input");
                     var customer = new CustomerManagementStore.Model.Customer
                     {
                         Id = input.Id,
