@@ -13,6 +13,7 @@ using Microsoft.Extensions.HealthChecks;
 using Microsoft.Extensions.Logging;
 using Pitstop.Infrastructure.Messaging.Extensions;
 using Serilog;
+using MassTransitAbstractions.Extensions;
 
 namespace CustomerManagementAPI.Host
 {
@@ -47,6 +48,8 @@ namespace CustomerManagementAPI.Host
 
         protected override void AddAdditionalServices(IServiceCollection services)
         {
+            services.AddMassTransitOptions(Configuration.GetSection("MassTransitOptions"));
+
             var configSection = Configuration.GetSection("RabbitMQ");
             string host = configSection["Host"];
             string userName = configSection["UserName"];

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Options;
+using MassTransitAbstractions;
 
 namespace CustomerManagementAPI.Host.Pages
 {
