@@ -3,22 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <UserSecretsId>5994a22f-30d1-47e7-8aa7-85115d7ac03e</UserSecretsId>
+    <UserSecretsId>aa52d06b-440c-446a-8ec1-6331d2444fc0</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
-  <PropertyGroup>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Update="CustomerManagementAPI.Host.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="2.2.5" />
-    <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="2.2.5" />
-    <PackageReference Include="P7Core.ObjectContainers" Version="1.0.46" />
+    <PackageReference Include="Microsoft.AspNetCore.HealthChecks" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.9" />
     <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
     <PackageReference Include="Serilog" Version="2.8.0" />
@@ -29,12 +23,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 
-
   <ItemGroup>
     <ProjectReference Include="..\AuthRequiredDemo.GraphQL\AuthRequiredDemo.GraphQL.csproj" />
     <ProjectReference Include="..\CustomerManagementAPI\CustomerManagementAPI.csproj" />
     <ProjectReference Include="..\GQL.GraphQLHost.Core\GQL.GraphQLHost.Core.csproj" />
     <ProjectReference Include="..\MasstransitAbstractions\MassTransitAbstractions.csproj" />
+    <ProjectReference Include="..\MessageContracts\MessageContracts.csproj" />
   </ItemGroup>
 
 </Project>

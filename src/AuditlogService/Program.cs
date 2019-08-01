@@ -9,7 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
-namespace CustomerManagementAPI.Host
+
+namespace AuditlogService
 {
     public class Program
     {
@@ -25,12 +26,12 @@ namespace CustomerManagementAPI.Host
             WebHost.CreateDefaultBuilder(args)
             .UseSerilog()
             .ConfigureAppConfiguration((hostingContext, config) =>
-                {
-                    var environmentName = hostingContext.HostingEnvironment.EnvironmentName;
-                    LoadConfigurations(config, environmentName);
-                    config.AddEnvironmentVariables();
-                    config.AddUserSecrets<Startup>();
-                })
+            {
+                var environmentName = hostingContext.HostingEnvironment.EnvironmentName;
+                LoadConfigurations(config, environmentName);
+                config.AddEnvironmentVariables();
+                config.AddUserSecrets<Startup>();
+            })
             .UseStartup<Startup>()
             .UseHealthChecks("/hc");
 

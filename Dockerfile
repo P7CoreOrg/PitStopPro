@@ -24,6 +24,7 @@ RUN dotnet restore
 RUN dotnet build   -c Release --no-restore -p:Version=$Version
 RUN dotnet pack    -c Release --no-restore -p:Version=$Version -o "../../dist/pack"
 RUN dotnet publish -c Release --no-restore -o "../../dist/publish/CustomerManagementAPI.Host/"  "./src/CustomerManagementAPI.Host/CustomerManagementAPI.Host.csproj"
+RUN dotnet publish -c Release --no-restore -o "../../dist/publish/AuditlogService/"  "./src/AuditlogService/AuditlogService.csproj"
 
 # RUN dotnet publish -c Release --no-restore -o "../../dist/publish" 
 # RUN dotnet pack    -c Release --no-restore -o "../../dist/pack"

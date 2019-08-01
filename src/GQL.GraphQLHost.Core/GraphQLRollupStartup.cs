@@ -25,10 +25,10 @@ using Swashbuckle.AspNetCore.Swagger;
 using GQL.Rollup.Extensions;
 using Microsoft.Extensions.HealthChecks;
 
-namespace CustomerManagementAPI.Host
+namespace GQL.GraphQLHost.Core
 {
-    public abstract class GraphQLRollupStartup<T> : GQL.Rollup.Extensions.AspNetCoreExtensions.IGraphQLRollupRegistrations
-        where T: class
+    public abstract class GraphQLRollupStartup<T> : Rollup.Extensions.AspNetCoreExtensions.IGraphQLRollupRegistrations
+        where T : class
     {
         protected readonly IHostingEnvironment _hostingEnvironment;
         public IConfiguration Configuration { get; }
@@ -168,7 +168,7 @@ namespace CustomerManagementAPI.Host
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             OnConfigureStart(app, env);
-         
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
