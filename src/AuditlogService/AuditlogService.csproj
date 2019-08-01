@@ -27,7 +27,7 @@
     <ProjectReference Include="..\AuthRequiredDemo.GraphQL\AuthRequiredDemo.GraphQL.csproj" />
     <ProjectReference Include="..\CustomerManagementAPI\CustomerManagementAPI.csproj" />
     <ProjectReference Include="..\GQL.GraphQLHost.Core\GQL.GraphQLHost.Core.csproj" />
-    <ProjectReference Include="..\MasstransitAbstractions\MassTransitAbstractions.csproj" />
+    <ProjectReference Include="..\MassTransitAbstractions\MassTransitAbstractions.csproj" />
     <ProjectReference Include="..\MessageContracts\MessageContracts.csproj" />
   </ItemGroup>
 
