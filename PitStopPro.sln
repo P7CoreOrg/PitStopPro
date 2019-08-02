@@ -56,6 +56,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransitAbstractions", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageContracts", "src\MessageContracts\MessageContracts.csproj", "{82968788-E573-4C0A-B6B1-ABFA8338C19A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pitstop.Infrastructure.Messaging", "src\Pitstop.Infrastructure.Messaging\Pitstop.Infrastructure.Messaging.csproj", "{AC434E09-1507-4ABF-821B-B361EE817A64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -134,6 +136,10 @@ Global
 		{82968788-E573-4C0A-B6B1-ABFA8338C19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82968788-E573-4C0A-B6B1-ABFA8338C19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82968788-E573-4C0A-B6B1-ABFA8338C19A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC434E09-1507-4ABF-821B-B361EE817A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC434E09-1507-4ABF-821B-B361EE817A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC434E09-1507-4ABF-821B-B361EE817A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC434E09-1507-4ABF-821B-B361EE817A64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -157,6 +163,7 @@ Global
 		{445E025A-F592-41A2-95D8-9B69CCE1BDCB} = {336D3FC0-1BF9-45D1-9DA2-09CAEE08FDC2}
 		{40AE6FE3-9179-467B-8630-84A1BB120A16} = {AE5A72AB-69BF-4365-B251-39EDB0B452C6}
 		{82968788-E573-4C0A-B6B1-ABFA8338C19A} = {AE5A72AB-69BF-4365-B251-39EDB0B452C6}
+		{AC434E09-1507-4ABF-821B-B361EE817A64} = {AE5A72AB-69BF-4365-B251-39EDB0B452C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40CA8DF3-11D5-48E1-9D3D-DE4FF71A97B4}

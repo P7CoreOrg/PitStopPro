@@ -14,6 +14,7 @@ using Serilog;
 using MassTransitAbstractions.Extensions;
 using GQL.GraphQLHost.Core;
 using MassTransitAbstractions;
+using System;
 
 namespace AuditlogService
 {
@@ -82,6 +83,12 @@ namespace AuditlogService
                .ReadFrom.Configuration(Configuration)
                .Enrich.WithMachineName()
                .CreateLogger();
+            var loggerFactory = app.ApplicationServices.GetService(typeof(ILoggerFactory)) as ILoggerFactory;
+            if (loggerFactory == null) throw new ArgumentNullException(nameof(loggerFactory));
+
+            var logger = loggerFactory.CreateLogger("GraphQL.Startup");
+            logger.LogInformation("LockUp Configure");
+
         }
 
         protected override void OnConfigureEnd(IApplicationBuilder app, IHostingEnvironment env)
