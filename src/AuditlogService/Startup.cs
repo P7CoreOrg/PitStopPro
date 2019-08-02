@@ -13,9 +13,16 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using MassTransitAbstractions.Extensions;
 using GQL.GraphQLHost.Core;
+using MassTransitAbstractions;
 
 namespace AuditlogService
 {
+    public interface IMyRabbitMQReceiveEndpointRegistration : IRabbitMQReceiveEndpointRegistration { }
+    public interface IMyRabbitMQContainer : IRabbitMQContainer { }
+
+    public class MyRabbitMQContainer : RabbitMQContainerBase, IMyRabbitMQContainer
+    {
+    }
     public class Startup : GraphQLRollupStartup<Startup>
     {
         public Startup(IHostingEnvironment env, IConfiguration configuration, ILogger<Startup> logger) :
@@ -45,7 +52,14 @@ namespace AuditlogService
 
         protected override void AddAdditionalServices(IServiceCollection services)
         {
-            services.AddMassTransitOptions(Configuration.GetSection("MassTransitOptions"));
+            services.AddTransient<IMyRabbitMQReceiveEndpointRegistration, OrderServiceEndpointRegistration>();
+            services.AddRabbitMQMassTransit<
+                  MassTransitOptions,
+                  IMyRabbitMQContainer,
+                  MyRabbitMQContainer, IMyRabbitMQReceiveEndpointRegistration>();
+
+            services.AddRabbitMqMassTransitOptions<MassTransitOptions>(Configuration.GetSection("MassTransitOptions"));
+
             services.AddHostedService<MessageQueueService>();
 
             var configSection = Configuration.GetSection("RabbitMQ");

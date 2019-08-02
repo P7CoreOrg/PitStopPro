@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MassTransit;
+using MassTransitAbstractions.Extensions;
 using MassTransit.RabbitMqTransport;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
@@ -10,40 +11,21 @@ namespace MassTransitAbstractions
 {
     public abstract class MessageQueueServiceBase : BackgroundService
     {
-        protected abstract void OnAddReceiveEndpoint(IRabbitMqBusFactoryConfigurator cfg, IRabbitMqHost host);
+        private IBusControlContainer _busControlContainer;
 
-        protected MassTransitOptions _options;
-        protected IBusControl _bus;
-
-        public MessageQueueServiceBase(IOptions<MassTransitOptions> options)
+        public MessageQueueServiceBase(IBusControlContainer busControlContainer)
         {
-            _options = options.Value;
-            switch (_options.TransportType)
-            {
-                case MassTransitOptions.Transport.RabbitMQ:
-                    _bus = Bus.Factory.CreateUsingRabbitMq(cfg =>
-                    {
-                        var host = cfg.Host(new Uri("rabbitmq://localhost/"), h =>
-                        {
-                            h.Username(_options.Username);
-                            h.Password(_options.Password);
-                        });
-                        OnAddReceiveEndpoint(cfg, host);
-                    });
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException($"MasstransitOptions.Transport:{_options.TransportType} is not supported");
-            }
+            _busControlContainer = busControlContainer;
 
         }
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            return _bus.StartAsync();
+            return _busControlContainer.BusControl.StartAsync();
         }
 
         public override Task StopAsync(CancellationToken cancellationToken)
         {
-            return Task.WhenAll(base.StopAsync(cancellationToken), _bus.StopAsync());
+            return Task.WhenAll(base.StopAsync(cancellationToken), _busControlContainer.BusControl.StopAsync());
         }
     }
 }

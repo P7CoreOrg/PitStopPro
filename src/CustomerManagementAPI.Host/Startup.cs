@@ -13,9 +13,17 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using MassTransitAbstractions.Extensions;
 using GQL.GraphQLHost.Core;
+using MassTransit.RabbitMqTransport;
+using MassTransitAbstractions;
 
 namespace CustomerManagementAPI.Host
 {
+    public interface IMyRabbitMQReceiveEndpointRegistration : IRabbitMQReceiveEndpointRegistration { }
+    public interface IMyRabbitMQContainer : IRabbitMQContainer { }
+
+    public class MyRabbitMQContainer : RabbitMQContainerBase, IMyRabbitMQContainer
+    {
+    }
     public class Startup : GraphQLRollupStartup<Startup>
     {
         public Startup(IHostingEnvironment env, IConfiguration configuration, ILogger<Startup> logger):
@@ -47,7 +55,12 @@ namespace CustomerManagementAPI.Host
 
         protected override void AddAdditionalServices(IServiceCollection services)
         {
-            services.AddMassTransitOptions(Configuration.GetSection("MassTransitOptions"));
+            services.AddRabbitMQMassTransit<
+                MassTransitOptions,
+                IMyRabbitMQContainer,
+                MyRabbitMQContainer, IMyRabbitMQReceiveEndpointRegistration>();
+
+            services.AddRabbitMqMassTransitOptions<MassTransitOptions>(Configuration.GetSection("MassTransitOptions"));
 
             var configSection = Configuration.GetSection("RabbitMQ");
             string host = configSection["Host"];

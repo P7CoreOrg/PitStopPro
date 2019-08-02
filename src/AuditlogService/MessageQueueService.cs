@@ -3,16 +3,15 @@ using MassTransitAbstractions;
 using Microsoft.Extensions.Options;
 using MassTransit.RabbitMqTransport;
 using MessageContracts;
+using System;
+using MassTransitAbstractions.Extensions;
 
 namespace AuditlogService
 {
-    public class MessageQueueService : MessageQueueServiceBase
+     
+    public class OrderServiceEndpointRegistration : IMyRabbitMQReceiveEndpointRegistration
     {
-        public MessageQueueService(IOptions<MassTransitOptions> options) : base(options)
-        {
-
-        }
-        protected override void OnAddReceiveEndpoint(IRabbitMqBusFactoryConfigurator cfg, IRabbitMqHost host)
+        public void AddReceiveEndpoint(IRabbitMqBusFactoryConfigurator cfg, IRabbitMqHost host)
         {
             cfg.ReceiveEndpoint(host, "order-service", e =>
             {
@@ -21,6 +20,14 @@ namespace AuditlogService
                     context.Message.OrderId
                 }));
             });
+        }
+    }
+    public class MessageQueueService : MessageQueueServiceBase
+    {
+        private IMyRabbitMQContainer _myRabbitMQContainer;
+        public MessageQueueService(IMyRabbitMQContainer myRabbitMQContainer) : base(myRabbitMQContainer)
+        {
+            _myRabbitMQContainer = myRabbitMQContainer;
         }
     }
 }
